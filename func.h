@@ -2,8 +2,10 @@
 #ifndef FUNC_H_INCLUDED
 #define FUNC_H_INCLUDED
 
+
 /**возвращает количество символов в строке s*/
 int strlength(char *s); 
+
 
 /**выводит строку по указателю на ее начало*/
 void strptinf(char *s);
@@ -14,7 +16,6 @@ char * sstrplus(char *s1, char *s2, int l2, int k);
 
 /**присоединяет s2 к s1, возвращает s1*/
 char * strglue (char *s1, char *s2);
-
 /*присоединяет не более n символов s2 к s1, возвращает s1*/
 char * strgluen(char *s1, char *s2, int n);
 
@@ -22,14 +23,12 @@ char * strgluen(char *s1, char *s2, int n);
 
 /*заменяет все символы строки s на символ с*/
 char * strfill(char *s, char c); 
-
 /*заменяет не более n символов строки s на символ с*/
 char * strfilln(char *s, char c, int n); 
 
 
 /*заменяет все символы строки s1 на символы строки s2*/
 char * strcopy(char * s1, char * s2);
-
 /*заменяет не более n символов строки s1 на символы строки s2*/
 char * strcopyn(char * s1, char * s2, int n);
 
@@ -38,5 +37,10 @@ char * strcopyn(char * s1, char * s2, int n);
 int strcomp(char * s1, char * s2);
 /*сравнивает не более первых n символов строки s1 с символами строки s2*/
 int strcompn(char * s1, char * s2, int n);
+
+
+/*ищет в строке s символ с и возвращает его указатель, при отсутствии - NULL*/
+char * strsearch (char *s, char c);
+
 
 #endif // FUNC_H_INCLUDED

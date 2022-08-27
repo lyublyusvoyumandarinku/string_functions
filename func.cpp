@@ -1,21 +1,10 @@
 
-
- /*puts, strchr, //strlen, //strcpy, //strncpy, //strcat, //strncat, //strset, //strsetn, fgets, strdup, getline*/
-
-/*
-функции 
-
-
-//int strcmp(char *s1, char *s2)
-сравнивает s1 и s2, возвращает значение 0, если строки эквивалентны
-
-//int strncmp(char *s1, char *s2, int n)
-сравнивает не более n символов строк s1 и s2, возвращает значение 0, 
-если начальные n символов строк эквивалентны
-*/
+ /*puts, //strchr, //strlen, //strcpy, //strncpy, //strcat, //strncat, //strset, //strsetn, fgets, strdup, getline*/
 
 #include <stdio.h>
 #include "func.h"
+#include "test.h"
+
 
 
 int strlength(char * s) {
@@ -69,7 +58,7 @@ char * strfilln(char *s, char c, int n) {
 
 
 
-char * strcopy(char * s1, char * s2){
+char * strcopy(char *s1, char *s2) {
     if (strlength(s1) < strlength(s2)) 
         return NULL;
     
@@ -79,7 +68,7 @@ char * strcopy(char * s1, char * s2){
     return s1;
 
 }
-char * strcopyn(char * s1, char * s2, int n){
+char * strcopyn(char *s1, char *s2, int n) {
     if (strlength(s1) < strlength(s2)) 
         return NULL;
     
@@ -91,7 +80,7 @@ char * strcopyn(char * s1, char * s2, int n){
 }
 
 
-int strcomp(char * s1, char * s2){
+int strcomp(char *s1, char *s2) {
     int l1 = strlength(s1);
     int l2 = strlength(s2);
     
@@ -107,8 +96,7 @@ int strcomp(char * s1, char * s2){
     }  
     return 0;
 }
-
-int strcompn(char * s1, char * s2, int n){
+int strcompn(char *s1, char *s2, int n) {
     int l1 = strlength(s1);
     int l2 = strlength(s2);
     
@@ -121,4 +109,13 @@ int strcompn(char * s1, char * s2, int n){
         if ((*(i++)) != (*(s2++)))
             return ( -1 + 2 * ( (*i) > (*s2) )  );  
     return 0;
+}
+
+
+char * strsearch (char *s, char c) {
+    char *i = s;
+    while ((*i) != '\0') 
+        if (*(i++) == c) 
+            return (i-1);
+    return NULL;
 }

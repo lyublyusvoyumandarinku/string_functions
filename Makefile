@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp func.cpp -o solve
+	g++ main.cpp func.cpp test.cpp -o solve
